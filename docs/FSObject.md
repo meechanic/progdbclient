@@ -5,9 +5,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **name** | **str** |  | 
-**human_decription** | **str** |  | 
+**human_description** | **str** |  | 
 **machine_description** | **str** |  | 
 **location** | **str** |  | 
+**kind** | **str** |  | [optional] 
 **module** | **int** |  | [optional] 
 **replica** | **int** |  | [optional] 
 

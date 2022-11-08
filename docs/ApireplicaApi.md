@@ -1,19 +1,19 @@
-# progdbclient.ApirepilcaApi
+# progdbclient.ApireplicaApi
 
 All URIs are relative to *http://localhost:8003*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apirepilca_create**](ApirepilcaApi.md#apirepilca_create) | **POST** /apirepilca/ | 
-[**apirepilca_delete**](ApirepilcaApi.md#apirepilca_delete) | **DELETE** /apirepilca/{id}/ | 
-[**apirepilca_list**](ApirepilcaApi.md#apirepilca_list) | **GET** /apirepilca/ | 
-[**apirepilca_partial_update**](ApirepilcaApi.md#apirepilca_partial_update) | **PATCH** /apirepilca/{id}/ | 
-[**apirepilca_read**](ApirepilcaApi.md#apirepilca_read) | **GET** /apirepilca/{id}/ | 
-[**apirepilca_update**](ApirepilcaApi.md#apirepilca_update) | **PUT** /apirepilca/{id}/ | 
+[**apireplica_create**](ApireplicaApi.md#apireplica_create) | **POST** /apireplica/ | 
+[**apireplica_delete**](ApireplicaApi.md#apireplica_delete) | **DELETE** /apireplica/{id}/ | 
+[**apireplica_list**](ApireplicaApi.md#apireplica_list) | **GET** /apireplica/ | 
+[**apireplica_partial_update**](ApireplicaApi.md#apireplica_partial_update) | **PATCH** /apireplica/{id}/ | 
+[**apireplica_read**](ApireplicaApi.md#apireplica_read) | **GET** /apireplica/{id}/ | 
+[**apireplica_update**](ApireplicaApi.md#apireplica_update) | **PUT** /apireplica/{id}/ | 
 
 
-# **apirepilca_create**
-> Replica apirepilca_create(data)
+# **apireplica_create**
+> Replica apireplica_create(data)
 
 
 
@@ -34,14 +34,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApirepilcaApi(progdbclient.ApiClient(configuration))
+api_instance = progdbclient.ApireplicaApi(progdbclient.ApiClient(configuration))
 data = progdbclient.Replica() # Replica | 
 
 try:
-    api_response = api_instance.apirepilca_create(data)
+    api_response = api_instance.apireplica_create(data)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApirepilcaApi->apirepilca_create: %s\n" % e)
+    print("Exception when calling ApireplicaApi->apireplica_create: %s\n" % e)
 ```
 
 ### Parameters
@@ -65,8 +65,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apirepilca_delete**
-> apirepilca_delete(id)
+# **apireplica_delete**
+> apireplica_delete(id)
 
 
 
@@ -87,13 +87,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApirepilcaApi(progdbclient.ApiClient(configuration))
+api_instance = progdbclient.ApireplicaApi(progdbclient.ApiClient(configuration))
 id = 56 # int | A unique integer value identifying this replica.
 
 try:
-    api_instance.apirepilca_delete(id)
+    api_instance.apireplica_delete(id)
 except ApiException as e:
-    print("Exception when calling ApirepilcaApi->apirepilca_delete: %s\n" % e)
+    print("Exception when calling ApireplicaApi->apireplica_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -117,8 +117,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apirepilca_list**
-> list[Replica] apirepilca_list(name=name, search=search, ordering=ordering)
+# **apireplica_list**
+> list[Replica] apireplica_list(name=name, search=search, ordering=ordering)
 
 
 
@@ -139,16 +139,16 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApirepilcaApi(progdbclient.ApiClient(configuration))
+api_instance = progdbclient.ApireplicaApi(progdbclient.ApiClient(configuration))
 name = 'name_example' # str |  (optional)
 search = 'search_example' # str | A search term. (optional)
 ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
 
 try:
-    api_response = api_instance.apirepilca_list(name=name, search=search, ordering=ordering)
+    api_response = api_instance.apireplica_list(name=name, search=search, ordering=ordering)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApirepilcaApi->apirepilca_list: %s\n" % e)
+    print("Exception when calling ApireplicaApi->apireplica_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -174,8 +174,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apirepilca_partial_update**
-> Replica apirepilca_partial_update(id, data)
+# **apireplica_partial_update**
+> Replica apireplica_partial_update(id, data)
 
 
 
@@ -196,15 +196,15 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApirepilcaApi(progdbclient.ApiClient(configuration))
+api_instance = progdbclient.ApireplicaApi(progdbclient.ApiClient(configuration))
 id = 56 # int | A unique integer value identifying this replica.
 data = progdbclient.Replica() # Replica | 
 
 try:
-    api_response = api_instance.apirepilca_partial_update(id, data)
+    api_response = api_instance.apireplica_partial_update(id, data)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApirepilcaApi->apirepilca_partial_update: %s\n" % e)
+    print("Exception when calling ApireplicaApi->apireplica_partial_update: %s\n" % e)
 ```
 
 ### Parameters
@@ -229,8 +229,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apirepilca_read**
-> Replica apirepilca_read(id)
+# **apireplica_read**
+> Replica apireplica_read(id)
 
 
 
@@ -251,14 +251,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApirepilcaApi(progdbclient.ApiClient(configuration))
+api_instance = progdbclient.ApireplicaApi(progdbclient.ApiClient(configuration))
 id = 56 # int | A unique integer value identifying this replica.
 
 try:
-    api_response = api_instance.apirepilca_read(id)
+    api_response = api_instance.apireplica_read(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApirepilcaApi->apirepilca_read: %s\n" % e)
+    print("Exception when calling ApireplicaApi->apireplica_read: %s\n" % e)
 ```
 
 ### Parameters
@@ -282,8 +282,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apirepilca_update**
-> Replica apirepilca_update(id, data)
+# **apireplica_update**
+> Replica apireplica_update(id, data)
 
 
 
@@ -304,15 +304,15 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApirepilcaApi(progdbclient.ApiClient(configuration))
+api_instance = progdbclient.ApireplicaApi(progdbclient.ApiClient(configuration))
 id = 56 # int | A unique integer value identifying this replica.
 data = progdbclient.Replica() # Replica | 
 
 try:
-    api_response = api_instance.apirepilca_update(id, data)
+    api_response = api_instance.apireplica_update(id, data)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApirepilcaApi->apirepilca_update: %s\n" % e)
+    print("Exception when calling ApireplicaApi->apireplica_update: %s\n" % e)
 ```
 
 ### Parameters

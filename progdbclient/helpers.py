@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 import yaml
 import traceback
-import infodbclient
+import progdbclient
 
 
 def eprint(*args, **kwargs):
@@ -17,11 +17,11 @@ def eprint_exception(e, print_traceback=True, need_exit=True):
         exit(1)
 
 
-class IDBCHelper:
+class PDBCHelper:
 
     def __init__(self, args):
         self.args = args
-        conf_file = "{}/.config/infodbclient/config.yaml".format(str(Path.home()))
+        conf_file = "{}/.config/progdbclient/config.yaml".format(str(Path.home()))
         self.conf_file_object = {"profiles": {"main": {"print_traceback": True}}, "current": "main"}
         try:
             with open(conf_file, "r") as f:
@@ -52,30 +52,37 @@ class IDBCHelper:
                                      self.get_current_conf_value("port"),
                                      self.get_current_conf_value("path"))
 
-    def get_linktags_api_instance(self):
-        configuration = infodbclient.Configuration()
+    def get_package_api_instance(self):
+        configuration = progdbclient.Configuration()
         configuration.host = self.get_current_conf_url()
         configuration.api_key["Authorization"] = self.get_current_conf_value("token")
         configuration.api_key_prefix["Authorization"] = "Token"
-        return infodbclient.ApilinktagsApi(infodbclient.ApiClient(configuration))
+        return progdbclient.ApipackageApi(progdbclient.ApiClient(configuration))
 
-    def get_sourcetags_api_instance(self):
-        configuration = infodbclient.Configuration()
+    def get_replica_api_instance(self):
+        configuration = progdbclient.Configuration()
         configuration.host = self.get_current_conf_url()
         configuration.api_key["Authorization"] = self.get_current_conf_value("token")
         configuration.api_key_prefix["Authorization"] = "Token"
-        return infodbclient.ApisourcetagsApi(infodbclient.ApiClient(configuration))
+        return progdbclient.ApireplicaApi(progdbclient.ApiClient(configuration))
 
-    def get_links_api_instance(self):
-        configuration = infodbclient.Configuration()
+    def get_module_api_instance(self):
+        configuration = progdbclient.Configuration()
         configuration.host = self.get_current_conf_url()
         configuration.api_key["Authorization"] = self.get_current_conf_value("token")
         configuration.api_key_prefix["Authorization"] = "Token"
-        return infodbclient.ApilinksApi(infodbclient.ApiClient(configuration))
+        return progdbclient.ApimoduleApi(progdbclient.ApiClient(configuration))
 
-    def get_sources_api_instance(self):
-        configuration = infodbclient.Configuration()
+    def get_sourcereplica_api_instance(self):
+        configuration = progdbclient.Configuration()
         configuration.host = self.get_current_conf_url()
         configuration.api_key["Authorization"] = self.get_current_conf_value("token")
         configuration.api_key_prefix["Authorization"] = "Token"
-        return infodbclient.ApisourcesApi(infodbclient.ApiClient(configuration))
+        return progdbclient.ApisourcereplicaApi(progdbclient.ApiClient(configuration))
+
+    def get_fsobject_api_instance(self):
+        configuration = progdbclient.Configuration()
+        configuration.host = self.get_current_conf_url()
+        configuration.api_key["Authorization"] = self.get_current_conf_value("token")
+        configuration.api_key_prefix["Authorization"] = "Token"
+        return progdbclient.ApifsobjectApi(progdbclient.ApiClient(configuration))

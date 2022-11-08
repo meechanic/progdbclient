@@ -35,28 +35,30 @@ class Replica(object):
     swagger_types = {
         'id': 'int',
         'name': 'str',
-        'human_decription': 'str',
+        'human_description': 'str',
         'machine_description': 'str',
-        'is_main': 'str',
-        'is_installation': 'str',
+        'is_main': 'bool',
+        'is_installation': 'bool',
         'location': 'str',
         'replica_collection': 'str',
-        'module': 'int'
+        'kind': 'str',
+        'package': 'int'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
-        'human_decription': 'human_decription',
+        'human_description': 'human_description',
         'machine_description': 'machine_description',
         'is_main': 'is_main',
         'is_installation': 'is_installation',
         'location': 'location',
         'replica_collection': 'replica_collection',
-        'module': 'module'
+        'kind': 'kind',
+        'package': 'package'
     }
 
-    def __init__(self, id=None, name=None, human_decription=None, machine_description=None, is_main=None, is_installation=None, location=None, replica_collection=None, module=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, human_description=None, machine_description=None, is_main=None, is_installation=None, location=None, replica_collection=None, kind=None, package=None, _configuration=None):  # noqa: E501
         """Replica - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -64,26 +66,31 @@ class Replica(object):
 
         self._id = None
         self._name = None
-        self._human_decription = None
+        self._human_description = None
         self._machine_description = None
         self._is_main = None
         self._is_installation = None
         self._location = None
         self._replica_collection = None
-        self._module = None
+        self._kind = None
+        self._package = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         self.name = name
-        self.human_decription = human_decription
+        self.human_description = human_description
         self.machine_description = machine_description
-        self.is_main = is_main
-        self.is_installation = is_installation
+        if is_main is not None:
+            self.is_main = is_main
+        if is_installation is not None:
+            self.is_installation = is_installation
         self.location = location
         self.replica_collection = replica_collection
-        if module is not None:
-            self.module = module
+        if kind is not None:
+            self.kind = kind
+        if package is not None:
+            self.package = package
 
     @property
     def id(self):
@@ -133,30 +140,30 @@ class Replica(object):
         self._name = name
 
     @property
-    def human_decription(self):
-        """Gets the human_decription of this Replica.  # noqa: E501
+    def human_description(self):
+        """Gets the human_description of this Replica.  # noqa: E501
 
 
-        :return: The human_decription of this Replica.  # noqa: E501
+        :return: The human_description of this Replica.  # noqa: E501
         :rtype: str
         """
-        return self._human_decription
+        return self._human_description
 
-    @human_decription.setter
-    def human_decription(self, human_decription):
-        """Sets the human_decription of this Replica.
+    @human_description.setter
+    def human_description(self, human_description):
+        """Sets the human_description of this Replica.
 
 
-        :param human_decription: The human_decription of this Replica.  # noqa: E501
+        :param human_description: The human_description of this Replica.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and human_decription is None:
-            raise ValueError("Invalid value for `human_decription`, must not be `None`")  # noqa: E501
+        if self._configuration.client_side_validation and human_description is None:
+            raise ValueError("Invalid value for `human_description`, must not be `None`")  # noqa: E501
         if (self._configuration.client_side_validation and
-                human_decription is not None and len(human_decription) < 1):
-            raise ValueError("Invalid value for `human_decription`, length must be greater than or equal to `1`")  # noqa: E501
+                human_description is not None and len(human_description) < 1):
+            raise ValueError("Invalid value for `human_description`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._human_decription = human_decription
+        self._human_description = human_description
 
     @property
     def machine_description(self):
@@ -190,7 +197,7 @@ class Replica(object):
 
 
         :return: The is_main of this Replica.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._is_main
 
@@ -200,13 +207,8 @@ class Replica(object):
 
 
         :param is_main: The is_main of this Replica.  # noqa: E501
-        :type: str
+        :type: bool
         """
-        if self._configuration.client_side_validation and is_main is None:
-            raise ValueError("Invalid value for `is_main`, must not be `None`")  # noqa: E501
-        if (self._configuration.client_side_validation and
-                is_main is not None and len(is_main) < 1):
-            raise ValueError("Invalid value for `is_main`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._is_main = is_main
 
@@ -216,7 +218,7 @@ class Replica(object):
 
 
         :return: The is_installation of this Replica.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._is_installation
 
@@ -226,13 +228,8 @@ class Replica(object):
 
 
         :param is_installation: The is_installation of this Replica.  # noqa: E501
-        :type: str
+        :type: bool
         """
-        if self._configuration.client_side_validation and is_installation is None:
-            raise ValueError("Invalid value for `is_installation`, must not be `None`")  # noqa: E501
-        if (self._configuration.client_side_validation and
-                is_installation is not None and len(is_installation) < 1):
-            raise ValueError("Invalid value for `is_installation`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._is_installation = is_installation
 
@@ -289,25 +286,46 @@ class Replica(object):
         self._replica_collection = replica_collection
 
     @property
-    def module(self):
-        """Gets the module of this Replica.  # noqa: E501
+    def kind(self):
+        """Gets the kind of this Replica.  # noqa: E501
 
 
-        :return: The module of this Replica.  # noqa: E501
+        :return: The kind of this Replica.  # noqa: E501
+        :rtype: str
+        """
+        return self._kind
+
+    @kind.setter
+    def kind(self, kind):
+        """Sets the kind of this Replica.
+
+
+        :param kind: The kind of this Replica.  # noqa: E501
+        :type: str
+        """
+
+        self._kind = kind
+
+    @property
+    def package(self):
+        """Gets the package of this Replica.  # noqa: E501
+
+
+        :return: The package of this Replica.  # noqa: E501
         :rtype: int
         """
-        return self._module
+        return self._package
 
-    @module.setter
-    def module(self, module):
-        """Sets the module of this Replica.
+    @package.setter
+    def package(self, package):
+        """Sets the package of this Replica.
 
 
-        :param module: The module of this Replica.  # noqa: E501
+        :param package: The package of this Replica.  # noqa: E501
         :type: int
         """
 
-        self._module = module
+        self._package = package
 
     def to_dict(self):
         """Returns the model properties as a dict"""

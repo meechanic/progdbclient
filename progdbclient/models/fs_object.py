@@ -35,9 +35,10 @@ class FSObject(object):
     swagger_types = {
         'id': 'int',
         'name': 'str',
-        'human_decription': 'str',
+        'human_description': 'str',
         'machine_description': 'str',
         'location': 'str',
+        'kind': 'str',
         'module': 'int',
         'replica': 'int'
     }
@@ -45,14 +46,15 @@ class FSObject(object):
     attribute_map = {
         'id': 'id',
         'name': 'name',
-        'human_decription': 'human_decription',
+        'human_description': 'human_description',
         'machine_description': 'machine_description',
         'location': 'location',
+        'kind': 'kind',
         'module': 'module',
         'replica': 'replica'
     }
 
-    def __init__(self, id=None, name=None, human_decription=None, machine_description=None, location=None, module=None, replica=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, human_description=None, machine_description=None, location=None, kind=None, module=None, replica=None, _configuration=None):  # noqa: E501
         """FSObject - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -60,9 +62,10 @@ class FSObject(object):
 
         self._id = None
         self._name = None
-        self._human_decription = None
+        self._human_description = None
         self._machine_description = None
         self._location = None
+        self._kind = None
         self._module = None
         self._replica = None
         self.discriminator = None
@@ -70,9 +73,11 @@ class FSObject(object):
         if id is not None:
             self.id = id
         self.name = name
-        self.human_decription = human_decription
+        self.human_description = human_description
         self.machine_description = machine_description
         self.location = location
+        if kind is not None:
+            self.kind = kind
         if module is not None:
             self.module = module
         if replica is not None:
@@ -126,30 +131,30 @@ class FSObject(object):
         self._name = name
 
     @property
-    def human_decription(self):
-        """Gets the human_decription of this FSObject.  # noqa: E501
+    def human_description(self):
+        """Gets the human_description of this FSObject.  # noqa: E501
 
 
-        :return: The human_decription of this FSObject.  # noqa: E501
+        :return: The human_description of this FSObject.  # noqa: E501
         :rtype: str
         """
-        return self._human_decription
+        return self._human_description
 
-    @human_decription.setter
-    def human_decription(self, human_decription):
-        """Sets the human_decription of this FSObject.
+    @human_description.setter
+    def human_description(self, human_description):
+        """Sets the human_description of this FSObject.
 
 
-        :param human_decription: The human_decription of this FSObject.  # noqa: E501
+        :param human_description: The human_description of this FSObject.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and human_decription is None:
-            raise ValueError("Invalid value for `human_decription`, must not be `None`")  # noqa: E501
+        if self._configuration.client_side_validation and human_description is None:
+            raise ValueError("Invalid value for `human_description`, must not be `None`")  # noqa: E501
         if (self._configuration.client_side_validation and
-                human_decription is not None and len(human_decription) < 1):
-            raise ValueError("Invalid value for `human_decription`, length must be greater than or equal to `1`")  # noqa: E501
+                human_description is not None and len(human_description) < 1):
+            raise ValueError("Invalid value for `human_description`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._human_decription = human_decription
+        self._human_description = human_description
 
     @property
     def machine_description(self):
@@ -202,6 +207,27 @@ class FSObject(object):
             raise ValueError("Invalid value for `location`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._location = location
+
+    @property
+    def kind(self):
+        """Gets the kind of this FSObject.  # noqa: E501
+
+
+        :return: The kind of this FSObject.  # noqa: E501
+        :rtype: str
+        """
+        return self._kind
+
+    @kind.setter
+    def kind(self, kind):
+        """Sets the kind of this FSObject.
+
+
+        :param kind: The kind of this FSObject.  # noqa: E501
+        :type: str
+        """
+
+        self._kind = kind
 
     @property
     def module(self):
