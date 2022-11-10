@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import progdbclient
-from progdbclient.models.source_replica import SourceReplica  # noqa: E501
+from progdbclient.models.edition import Edition  # noqa: E501
 from progdbclient.rest import ApiException
 
 
-class TestSourceReplica(unittest.TestCase):
-    """SourceReplica unit test stubs"""
+class TestEdition(unittest.TestCase):
+    """Edition unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestSourceReplica(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSourceReplica(self):
-        """Test SourceReplica"""
+    def testEdition(self):
+        """Test Edition"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = progdbclient.models.source_replica.SourceReplica()  # noqa: E501
+        # model = progdbclient.models.edition.Edition()  # noqa: E501
         pass
 
 

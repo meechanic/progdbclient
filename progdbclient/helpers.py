@@ -52,37 +52,24 @@ class PDBCHelper:
                                      self.get_current_conf_value("port"),
                                      self.get_current_conf_value("path"))
 
-    def get_package_api_instance(self):
+    def get_packages_api_instance(self):
         configuration = progdbclient.Configuration()
         configuration.host = self.get_current_conf_url()
         configuration.api_key["Authorization"] = self.get_current_conf_value("token")
         configuration.api_key_prefix["Authorization"] = "Token"
-        return progdbclient.ApipackageApi(progdbclient.ApiClient(configuration))
+        return progdbclient.ApipackagesApi(progdbclient.ApiClient(configuration))
 
-    def get_replica_api_instance(self):
+    def get_editions_api_instance(self):
         configuration = progdbclient.Configuration()
         configuration.host = self.get_current_conf_url()
         configuration.api_key["Authorization"] = self.get_current_conf_value("token")
         configuration.api_key_prefix["Authorization"] = "Token"
-        return progdbclient.ApireplicaApi(progdbclient.ApiClient(configuration))
+        return progdbclient.ApieditionsApi(progdbclient.ApiClient(configuration))
 
-    def get_module_api_instance(self):
+    def get_resources_api_instance(self):
         configuration = progdbclient.Configuration()
         configuration.host = self.get_current_conf_url()
         configuration.api_key["Authorization"] = self.get_current_conf_value("token")
         configuration.api_key_prefix["Authorization"] = "Token"
-        return progdbclient.ApimoduleApi(progdbclient.ApiClient(configuration))
+        return progdbclient.ApiresourcesApi(progdbclient.ApiClient(configuration))
 
-    def get_sourcereplica_api_instance(self):
-        configuration = progdbclient.Configuration()
-        configuration.host = self.get_current_conf_url()
-        configuration.api_key["Authorization"] = self.get_current_conf_value("token")
-        configuration.api_key_prefix["Authorization"] = "Token"
-        return progdbclient.ApisourcereplicaApi(progdbclient.ApiClient(configuration))
-
-    def get_fsobject_api_instance(self):
-        configuration = progdbclient.Configuration()
-        configuration.host = self.get_current_conf_url()
-        configuration.api_key["Authorization"] = self.get_current_conf_value("token")
-        configuration.api_key_prefix["Authorization"] = "Token"
-        return progdbclient.ApifsobjectApi(progdbclient.ApiClient(configuration))

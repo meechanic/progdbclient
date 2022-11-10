@@ -17,19 +17,15 @@ from __future__ import absolute_import
 
 # import apis into sdk package
 from progdbclient.api.api_token_auth_api import ApiTokenAuthApi
-from progdbclient.api.apifsobject_api import ApifsobjectApi
-from progdbclient.api.apimodule_api import ApimoduleApi
-from progdbclient.api.apipackage_api import ApipackageApi
-from progdbclient.api.apireplica_api import ApireplicaApi
-from progdbclient.api.apisourcereplica_api import ApisourcereplicaApi
+from progdbclient.api.apieditions_api import ApieditionsApi
+from progdbclient.api.apipackages_api import ApipackagesApi
+from progdbclient.api.apiresources_api import ApiresourcesApi
 
 # import ApiClient
 from progdbclient.api_client import ApiClient
 from progdbclient.configuration import Configuration
 # import models into sdk package
 from progdbclient.models.auth_token import AuthToken
-from progdbclient.models.fs_object import FSObject
-from progdbclient.models.module import Module
+from progdbclient.models.edition import Edition
 from progdbclient.models.package import Package
-from progdbclient.models.replica import Replica
-from progdbclient.models.source_replica import SourceReplica
+from progdbclient.models.resource import Resource

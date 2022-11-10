@@ -1,19 +1,19 @@
-# progdbclient.ApisourcereplicaApi
+# progdbclient.ApipackagesApi
 
 All URIs are relative to *http://localhost:8003*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apisourcereplica_create**](ApisourcereplicaApi.md#apisourcereplica_create) | **POST** /apisourcereplica/ | 
-[**apisourcereplica_delete**](ApisourcereplicaApi.md#apisourcereplica_delete) | **DELETE** /apisourcereplica/{id}/ | 
-[**apisourcereplica_list**](ApisourcereplicaApi.md#apisourcereplica_list) | **GET** /apisourcereplica/ | 
-[**apisourcereplica_partial_update**](ApisourcereplicaApi.md#apisourcereplica_partial_update) | **PATCH** /apisourcereplica/{id}/ | 
-[**apisourcereplica_read**](ApisourcereplicaApi.md#apisourcereplica_read) | **GET** /apisourcereplica/{id}/ | 
-[**apisourcereplica_update**](ApisourcereplicaApi.md#apisourcereplica_update) | **PUT** /apisourcereplica/{id}/ | 
+[**apipackages_create**](ApipackagesApi.md#apipackages_create) | **POST** /apipackages/ | 
+[**apipackages_delete**](ApipackagesApi.md#apipackages_delete) | **DELETE** /apipackages/{id}/ | 
+[**apipackages_list**](ApipackagesApi.md#apipackages_list) | **GET** /apipackages/ | 
+[**apipackages_partial_update**](ApipackagesApi.md#apipackages_partial_update) | **PATCH** /apipackages/{id}/ | 
+[**apipackages_read**](ApipackagesApi.md#apipackages_read) | **GET** /apipackages/{id}/ | 
+[**apipackages_update**](ApipackagesApi.md#apipackages_update) | **PUT** /apipackages/{id}/ | 
 
 
-# **apisourcereplica_create**
-> SourceReplica apisourcereplica_create(data)
+# **apipackages_create**
+> Package apipackages_create(data)
 
 
 
@@ -34,25 +34,25 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApisourcereplicaApi(progdbclient.ApiClient(configuration))
-data = progdbclient.SourceReplica() # SourceReplica | 
+api_instance = progdbclient.ApipackagesApi(progdbclient.ApiClient(configuration))
+data = progdbclient.Package() # Package | 
 
 try:
-    api_response = api_instance.apisourcereplica_create(data)
+    api_response = api_instance.apipackages_create(data)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApisourcereplicaApi->apisourcereplica_create: %s\n" % e)
+    print("Exception when calling ApipackagesApi->apipackages_create: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**SourceReplica**](SourceReplica.md)|  | 
+ **data** | [**Package**](Package.md)|  | 
 
 ### Return type
 
-[**SourceReplica**](SourceReplica.md)
+[**Package**](Package.md)
 
 ### Authorization
 
@@ -65,8 +65,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apisourcereplica_delete**
-> apisourcereplica_delete(id)
+# **apipackages_delete**
+> apipackages_delete(id)
 
 
 
@@ -87,20 +87,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApisourcereplicaApi(progdbclient.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this source replica.
+api_instance = progdbclient.ApipackagesApi(progdbclient.ApiClient(configuration))
+id = 56 # int | A unique integer value identifying this package.
 
 try:
-    api_instance.apisourcereplica_delete(id)
+    api_instance.apipackages_delete(id)
 except ApiException as e:
-    print("Exception when calling ApisourcereplicaApi->apisourcereplica_delete: %s\n" % e)
+    print("Exception when calling ApipackagesApi->apipackages_delete: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this source replica. | 
+ **id** | **int**| A unique integer value identifying this package. | 
 
 ### Return type
 
@@ -117,8 +117,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apisourcereplica_list**
-> list[SourceReplica] apisourcereplica_list(name=name, search=search, ordering=ordering)
+# **apipackages_list**
+> list[Package] apipackages_list(name=name, search=search, ordering=ordering)
 
 
 
@@ -139,16 +139,16 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApisourcereplicaApi(progdbclient.ApiClient(configuration))
+api_instance = progdbclient.ApipackagesApi(progdbclient.ApiClient(configuration))
 name = 'name_example' # str |  (optional)
 search = 'search_example' # str | A search term. (optional)
 ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
 
 try:
-    api_response = api_instance.apisourcereplica_list(name=name, search=search, ordering=ordering)
+    api_response = api_instance.apipackages_list(name=name, search=search, ordering=ordering)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApisourcereplicaApi->apisourcereplica_list: %s\n" % e)
+    print("Exception when calling ApipackagesApi->apipackages_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[SourceReplica]**](SourceReplica.md)
+[**list[Package]**](Package.md)
 
 ### Authorization
 
@@ -174,8 +174,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apisourcereplica_partial_update**
-> SourceReplica apisourcereplica_partial_update(id, data)
+# **apipackages_partial_update**
+> Package apipackages_partial_update(id, data)
 
 
 
@@ -196,27 +196,27 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApisourcereplicaApi(progdbclient.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this source replica.
-data = progdbclient.SourceReplica() # SourceReplica | 
+api_instance = progdbclient.ApipackagesApi(progdbclient.ApiClient(configuration))
+id = 56 # int | A unique integer value identifying this package.
+data = progdbclient.Package() # Package | 
 
 try:
-    api_response = api_instance.apisourcereplica_partial_update(id, data)
+    api_response = api_instance.apipackages_partial_update(id, data)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApisourcereplicaApi->apisourcereplica_partial_update: %s\n" % e)
+    print("Exception when calling ApipackagesApi->apipackages_partial_update: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this source replica. | 
- **data** | [**SourceReplica**](SourceReplica.md)|  | 
+ **id** | **int**| A unique integer value identifying this package. | 
+ **data** | [**Package**](Package.md)|  | 
 
 ### Return type
 
-[**SourceReplica**](SourceReplica.md)
+[**Package**](Package.md)
 
 ### Authorization
 
@@ -229,8 +229,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apisourcereplica_read**
-> SourceReplica apisourcereplica_read(id)
+# **apipackages_read**
+> Package apipackages_read(id)
 
 
 
@@ -251,25 +251,25 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApisourcereplicaApi(progdbclient.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this source replica.
+api_instance = progdbclient.ApipackagesApi(progdbclient.ApiClient(configuration))
+id = 56 # int | A unique integer value identifying this package.
 
 try:
-    api_response = api_instance.apisourcereplica_read(id)
+    api_response = api_instance.apipackages_read(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApisourcereplicaApi->apisourcereplica_read: %s\n" % e)
+    print("Exception when calling ApipackagesApi->apipackages_read: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this source replica. | 
+ **id** | **int**| A unique integer value identifying this package. | 
 
 ### Return type
 
-[**SourceReplica**](SourceReplica.md)
+[**Package**](Package.md)
 
 ### Authorization
 
@@ -282,8 +282,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apisourcereplica_update**
-> SourceReplica apisourcereplica_update(id, data)
+# **apipackages_update**
+> Package apipackages_update(id, data)
 
 
 
@@ -304,27 +304,27 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApisourcereplicaApi(progdbclient.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this source replica.
-data = progdbclient.SourceReplica() # SourceReplica | 
+api_instance = progdbclient.ApipackagesApi(progdbclient.ApiClient(configuration))
+id = 56 # int | A unique integer value identifying this package.
+data = progdbclient.Package() # Package | 
 
 try:
-    api_response = api_instance.apisourcereplica_update(id, data)
+    api_response = api_instance.apipackages_update(id, data)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApisourcereplicaApi->apisourcereplica_update: %s\n" % e)
+    print("Exception when calling ApipackagesApi->apipackages_update: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this source replica. | 
- **data** | [**SourceReplica**](SourceReplica.md)|  | 
+ **id** | **int**| A unique integer value identifying this package. | 
+ **data** | [**Package**](Package.md)|  | 
 
 ### Return type
 
-[**SourceReplica**](SourceReplica.md)
+[**Package**](Package.md)
 
 ### Authorization
 

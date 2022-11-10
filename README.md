@@ -76,46 +76,32 @@ All URIs are relative to *http://localhost:8003*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ApiTokenAuthApi* | [**api_token_auth_create**](docs/ApiTokenAuthApi.md#api_token_auth_create) | **POST** /api-token-auth/ | 
-*ApifsobjectApi* | [**apifsobject_create**](docs/ApifsobjectApi.md#apifsobject_create) | **POST** /apifsobject/ | 
-*ApifsobjectApi* | [**apifsobject_delete**](docs/ApifsobjectApi.md#apifsobject_delete) | **DELETE** /apifsobject/{id}/ | 
-*ApifsobjectApi* | [**apifsobject_list**](docs/ApifsobjectApi.md#apifsobject_list) | **GET** /apifsobject/ | 
-*ApifsobjectApi* | [**apifsobject_partial_update**](docs/ApifsobjectApi.md#apifsobject_partial_update) | **PATCH** /apifsobject/{id}/ | 
-*ApifsobjectApi* | [**apifsobject_read**](docs/ApifsobjectApi.md#apifsobject_read) | **GET** /apifsobject/{id}/ | 
-*ApifsobjectApi* | [**apifsobject_update**](docs/ApifsobjectApi.md#apifsobject_update) | **PUT** /apifsobject/{id}/ | 
-*ApimoduleApi* | [**apimodule_create**](docs/ApimoduleApi.md#apimodule_create) | **POST** /apimodule/ | 
-*ApimoduleApi* | [**apimodule_delete**](docs/ApimoduleApi.md#apimodule_delete) | **DELETE** /apimodule/{id}/ | 
-*ApimoduleApi* | [**apimodule_list**](docs/ApimoduleApi.md#apimodule_list) | **GET** /apimodule/ | 
-*ApimoduleApi* | [**apimodule_partial_update**](docs/ApimoduleApi.md#apimodule_partial_update) | **PATCH** /apimodule/{id}/ | 
-*ApimoduleApi* | [**apimodule_read**](docs/ApimoduleApi.md#apimodule_read) | **GET** /apimodule/{id}/ | 
-*ApimoduleApi* | [**apimodule_update**](docs/ApimoduleApi.md#apimodule_update) | **PUT** /apimodule/{id}/ | 
-*ApipackageApi* | [**apipackage_create**](docs/ApipackageApi.md#apipackage_create) | **POST** /apipackage/ | 
-*ApipackageApi* | [**apipackage_delete**](docs/ApipackageApi.md#apipackage_delete) | **DELETE** /apipackage/{id}/ | 
-*ApipackageApi* | [**apipackage_list**](docs/ApipackageApi.md#apipackage_list) | **GET** /apipackage/ | 
-*ApipackageApi* | [**apipackage_partial_update**](docs/ApipackageApi.md#apipackage_partial_update) | **PATCH** /apipackage/{id}/ | 
-*ApipackageApi* | [**apipackage_read**](docs/ApipackageApi.md#apipackage_read) | **GET** /apipackage/{id}/ | 
-*ApipackageApi* | [**apipackage_update**](docs/ApipackageApi.md#apipackage_update) | **PUT** /apipackage/{id}/ | 
-*ApireplicaApi* | [**apireplica_create**](docs/ApireplicaApi.md#apireplica_create) | **POST** /apireplica/ | 
-*ApireplicaApi* | [**apireplica_delete**](docs/ApireplicaApi.md#apireplica_delete) | **DELETE** /apireplica/{id}/ | 
-*ApireplicaApi* | [**apireplica_list**](docs/ApireplicaApi.md#apireplica_list) | **GET** /apireplica/ | 
-*ApireplicaApi* | [**apireplica_partial_update**](docs/ApireplicaApi.md#apireplica_partial_update) | **PATCH** /apireplica/{id}/ | 
-*ApireplicaApi* | [**apireplica_read**](docs/ApireplicaApi.md#apireplica_read) | **GET** /apireplica/{id}/ | 
-*ApireplicaApi* | [**apireplica_update**](docs/ApireplicaApi.md#apireplica_update) | **PUT** /apireplica/{id}/ | 
-*ApisourcereplicaApi* | [**apisourcereplica_create**](docs/ApisourcereplicaApi.md#apisourcereplica_create) | **POST** /apisourcereplica/ | 
-*ApisourcereplicaApi* | [**apisourcereplica_delete**](docs/ApisourcereplicaApi.md#apisourcereplica_delete) | **DELETE** /apisourcereplica/{id}/ | 
-*ApisourcereplicaApi* | [**apisourcereplica_list**](docs/ApisourcereplicaApi.md#apisourcereplica_list) | **GET** /apisourcereplica/ | 
-*ApisourcereplicaApi* | [**apisourcereplica_partial_update**](docs/ApisourcereplicaApi.md#apisourcereplica_partial_update) | **PATCH** /apisourcereplica/{id}/ | 
-*ApisourcereplicaApi* | [**apisourcereplica_read**](docs/ApisourcereplicaApi.md#apisourcereplica_read) | **GET** /apisourcereplica/{id}/ | 
-*ApisourcereplicaApi* | [**apisourcereplica_update**](docs/ApisourcereplicaApi.md#apisourcereplica_update) | **PUT** /apisourcereplica/{id}/ | 
+*ApieditionsApi* | [**apieditions_create**](docs/ApieditionsApi.md#apieditions_create) | **POST** /apieditions/ | 
+*ApieditionsApi* | [**apieditions_delete**](docs/ApieditionsApi.md#apieditions_delete) | **DELETE** /apieditions/{id}/ | 
+*ApieditionsApi* | [**apieditions_list**](docs/ApieditionsApi.md#apieditions_list) | **GET** /apieditions/ | 
+*ApieditionsApi* | [**apieditions_partial_update**](docs/ApieditionsApi.md#apieditions_partial_update) | **PATCH** /apieditions/{id}/ | 
+*ApieditionsApi* | [**apieditions_read**](docs/ApieditionsApi.md#apieditions_read) | **GET** /apieditions/{id}/ | 
+*ApieditionsApi* | [**apieditions_update**](docs/ApieditionsApi.md#apieditions_update) | **PUT** /apieditions/{id}/ | 
+*ApipackagesApi* | [**apipackages_create**](docs/ApipackagesApi.md#apipackages_create) | **POST** /apipackages/ | 
+*ApipackagesApi* | [**apipackages_delete**](docs/ApipackagesApi.md#apipackages_delete) | **DELETE** /apipackages/{id}/ | 
+*ApipackagesApi* | [**apipackages_list**](docs/ApipackagesApi.md#apipackages_list) | **GET** /apipackages/ | 
+*ApipackagesApi* | [**apipackages_partial_update**](docs/ApipackagesApi.md#apipackages_partial_update) | **PATCH** /apipackages/{id}/ | 
+*ApipackagesApi* | [**apipackages_read**](docs/ApipackagesApi.md#apipackages_read) | **GET** /apipackages/{id}/ | 
+*ApipackagesApi* | [**apipackages_update**](docs/ApipackagesApi.md#apipackages_update) | **PUT** /apipackages/{id}/ | 
+*ApiresourcesApi* | [**apiresources_create**](docs/ApiresourcesApi.md#apiresources_create) | **POST** /apiresources/ | 
+*ApiresourcesApi* | [**apiresources_delete**](docs/ApiresourcesApi.md#apiresources_delete) | **DELETE** /apiresources/{id}/ | 
+*ApiresourcesApi* | [**apiresources_list**](docs/ApiresourcesApi.md#apiresources_list) | **GET** /apiresources/ | 
+*ApiresourcesApi* | [**apiresources_partial_update**](docs/ApiresourcesApi.md#apiresources_partial_update) | **PATCH** /apiresources/{id}/ | 
+*ApiresourcesApi* | [**apiresources_read**](docs/ApiresourcesApi.md#apiresources_read) | **GET** /apiresources/{id}/ | 
+*ApiresourcesApi* | [**apiresources_update**](docs/ApiresourcesApi.md#apiresources_update) | **PUT** /apiresources/{id}/ | 
 
 
 ## Documentation For Models
 
  - [AuthToken](docs/AuthToken.md)
- - [FSObject](docs/FSObject.md)
- - [Module](docs/Module.md)
+ - [Edition](docs/Edition.md)
  - [Package](docs/Package.md)
- - [Replica](docs/Replica.md)
- - [SourceReplica](docs/SourceReplica.md)
+ - [Resource](docs/Resource.md)
 
 
 ## Documentation For Authorization

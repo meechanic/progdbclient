@@ -16,8 +16,6 @@ from __future__ import absolute_import
 
 # import models into model package
 from progdbclient.models.auth_token import AuthToken
-from progdbclient.models.fs_object import FSObject
-from progdbclient.models.module import Module
+from progdbclient.models.edition import Edition
 from progdbclient.models.package import Package
-from progdbclient.models.replica import Replica
-from progdbclient.models.source_replica import SourceReplica
+from progdbclient.models.resource import Resource

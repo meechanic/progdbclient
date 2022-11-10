@@ -38,8 +38,9 @@ class Package(object):
         'human_description': 'str',
         'machine_description': 'str',
         'main_prog_language': 'str',
-        'package_collection': 'str',
-        'kind': 'str'
+        'supercategory': 'str',
+        'category': 'str',
+        'subcategory': 'str'
     }
 
     attribute_map = {
@@ -48,11 +49,12 @@ class Package(object):
         'human_description': 'human_description',
         'machine_description': 'machine_description',
         'main_prog_language': 'main_prog_language',
-        'package_collection': 'package_collection',
-        'kind': 'kind'
+        'supercategory': 'supercategory',
+        'category': 'category',
+        'subcategory': 'subcategory'
     }
 
-    def __init__(self, id=None, name=None, human_description=None, machine_description=None, main_prog_language=None, package_collection=None, kind=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, human_description=None, machine_description=None, main_prog_language=None, supercategory=None, category=None, subcategory=None, _configuration=None):  # noqa: E501
         """Package - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -63,19 +65,26 @@ class Package(object):
         self._human_description = None
         self._machine_description = None
         self._main_prog_language = None
-        self._package_collection = None
-        self._kind = None
+        self._supercategory = None
+        self._category = None
+        self._subcategory = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         self.name = name
-        self.human_description = human_description
-        self.machine_description = machine_description
-        self.main_prog_language = main_prog_language
-        self.package_collection = package_collection
-        if kind is not None:
-            self.kind = kind
+        if human_description is not None:
+            self.human_description = human_description
+        if machine_description is not None:
+            self.machine_description = machine_description
+        if main_prog_language is not None:
+            self.main_prog_language = main_prog_language
+        if supercategory is not None:
+            self.supercategory = supercategory
+        if category is not None:
+            self.category = category
+        if subcategory is not None:
+            self.subcategory = subcategory
 
     @property
     def id(self):
@@ -142,11 +151,6 @@ class Package(object):
         :param human_description: The human_description of this Package.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and human_description is None:
-            raise ValueError("Invalid value for `human_description`, must not be `None`")  # noqa: E501
-        if (self._configuration.client_side_validation and
-                human_description is not None and len(human_description) < 1):
-            raise ValueError("Invalid value for `human_description`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._human_description = human_description
 
@@ -168,11 +172,6 @@ class Package(object):
         :param machine_description: The machine_description of this Package.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and machine_description is None:
-            raise ValueError("Invalid value for `machine_description`, must not be `None`")  # noqa: E501
-        if (self._configuration.client_side_validation and
-                machine_description is not None and len(machine_description) < 1):
-            raise ValueError("Invalid value for `machine_description`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._machine_description = machine_description
 
@@ -194,60 +193,71 @@ class Package(object):
         :param main_prog_language: The main_prog_language of this Package.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and main_prog_language is None:
-            raise ValueError("Invalid value for `main_prog_language`, must not be `None`")  # noqa: E501
-        if (self._configuration.client_side_validation and
-                main_prog_language is not None and len(main_prog_language) < 1):
-            raise ValueError("Invalid value for `main_prog_language`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._main_prog_language = main_prog_language
 
     @property
-    def package_collection(self):
-        """Gets the package_collection of this Package.  # noqa: E501
+    def supercategory(self):
+        """Gets the supercategory of this Package.  # noqa: E501
 
 
-        :return: The package_collection of this Package.  # noqa: E501
+        :return: The supercategory of this Package.  # noqa: E501
         :rtype: str
         """
-        return self._package_collection
+        return self._supercategory
 
-    @package_collection.setter
-    def package_collection(self, package_collection):
-        """Sets the package_collection of this Package.
+    @supercategory.setter
+    def supercategory(self, supercategory):
+        """Sets the supercategory of this Package.
 
 
-        :param package_collection: The package_collection of this Package.  # noqa: E501
+        :param supercategory: The supercategory of this Package.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and package_collection is None:
-            raise ValueError("Invalid value for `package_collection`, must not be `None`")  # noqa: E501
-        if (self._configuration.client_side_validation and
-                package_collection is not None and len(package_collection) < 1):
-            raise ValueError("Invalid value for `package_collection`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._package_collection = package_collection
+        self._supercategory = supercategory
 
     @property
-    def kind(self):
-        """Gets the kind of this Package.  # noqa: E501
+    def category(self):
+        """Gets the category of this Package.  # noqa: E501
 
 
-        :return: The kind of this Package.  # noqa: E501
+        :return: The category of this Package.  # noqa: E501
         :rtype: str
         """
-        return self._kind
+        return self._category
 
-    @kind.setter
-    def kind(self, kind):
-        """Sets the kind of this Package.
+    @category.setter
+    def category(self, category):
+        """Sets the category of this Package.
 
 
-        :param kind: The kind of this Package.  # noqa: E501
+        :param category: The category of this Package.  # noqa: E501
         :type: str
         """
 
-        self._kind = kind
+        self._category = category
+
+    @property
+    def subcategory(self):
+        """Gets the subcategory of this Package.  # noqa: E501
+
+
+        :return: The subcategory of this Package.  # noqa: E501
+        :rtype: str
+        """
+        return self._subcategory
+
+    @subcategory.setter
+    def subcategory(self, subcategory):
+        """Sets the subcategory of this Package.
+
+
+        :param subcategory: The subcategory of this Package.  # noqa: E501
+        :type: str
+        """
+
+        self._subcategory = subcategory
 
     def to_dict(self):
         """Returns the model properties as a dict"""

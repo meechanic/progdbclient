@@ -1,19 +1,19 @@
-# progdbclient.ApimoduleApi
+# progdbclient.ApieditionsApi
 
 All URIs are relative to *http://localhost:8003*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apimodule_create**](ApimoduleApi.md#apimodule_create) | **POST** /apimodule/ | 
-[**apimodule_delete**](ApimoduleApi.md#apimodule_delete) | **DELETE** /apimodule/{id}/ | 
-[**apimodule_list**](ApimoduleApi.md#apimodule_list) | **GET** /apimodule/ | 
-[**apimodule_partial_update**](ApimoduleApi.md#apimodule_partial_update) | **PATCH** /apimodule/{id}/ | 
-[**apimodule_read**](ApimoduleApi.md#apimodule_read) | **GET** /apimodule/{id}/ | 
-[**apimodule_update**](ApimoduleApi.md#apimodule_update) | **PUT** /apimodule/{id}/ | 
+[**apieditions_create**](ApieditionsApi.md#apieditions_create) | **POST** /apieditions/ | 
+[**apieditions_delete**](ApieditionsApi.md#apieditions_delete) | **DELETE** /apieditions/{id}/ | 
+[**apieditions_list**](ApieditionsApi.md#apieditions_list) | **GET** /apieditions/ | 
+[**apieditions_partial_update**](ApieditionsApi.md#apieditions_partial_update) | **PATCH** /apieditions/{id}/ | 
+[**apieditions_read**](ApieditionsApi.md#apieditions_read) | **GET** /apieditions/{id}/ | 
+[**apieditions_update**](ApieditionsApi.md#apieditions_update) | **PUT** /apieditions/{id}/ | 
 
 
-# **apimodule_create**
-> Module apimodule_create(data)
+# **apieditions_create**
+> Edition apieditions_create(data)
 
 
 
@@ -34,25 +34,25 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApimoduleApi(progdbclient.ApiClient(configuration))
-data = progdbclient.Module() # Module | 
+api_instance = progdbclient.ApieditionsApi(progdbclient.ApiClient(configuration))
+data = progdbclient.Edition() # Edition | 
 
 try:
-    api_response = api_instance.apimodule_create(data)
+    api_response = api_instance.apieditions_create(data)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApimoduleApi->apimodule_create: %s\n" % e)
+    print("Exception when calling ApieditionsApi->apieditions_create: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Module**](Module.md)|  | 
+ **data** | [**Edition**](Edition.md)|  | 
 
 ### Return type
 
-[**Module**](Module.md)
+[**Edition**](Edition.md)
 
 ### Authorization
 
@@ -65,8 +65,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apimodule_delete**
-> apimodule_delete(id)
+# **apieditions_delete**
+> apieditions_delete(id)
 
 
 
@@ -87,20 +87,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApimoduleApi(progdbclient.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this module.
+api_instance = progdbclient.ApieditionsApi(progdbclient.ApiClient(configuration))
+id = 56 # int | A unique integer value identifying this edition.
 
 try:
-    api_instance.apimodule_delete(id)
+    api_instance.apieditions_delete(id)
 except ApiException as e:
-    print("Exception when calling ApimoduleApi->apimodule_delete: %s\n" % e)
+    print("Exception when calling ApieditionsApi->apieditions_delete: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this module. | 
+ **id** | **int**| A unique integer value identifying this edition. | 
 
 ### Return type
 
@@ -117,8 +117,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apimodule_list**
-> list[Module] apimodule_list(name=name, search=search, ordering=ordering)
+# **apieditions_list**
+> list[Edition] apieditions_list(name=name, search=search, ordering=ordering)
 
 
 
@@ -139,16 +139,16 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApimoduleApi(progdbclient.ApiClient(configuration))
+api_instance = progdbclient.ApieditionsApi(progdbclient.ApiClient(configuration))
 name = 'name_example' # str |  (optional)
 search = 'search_example' # str | A search term. (optional)
 ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
 
 try:
-    api_response = api_instance.apimodule_list(name=name, search=search, ordering=ordering)
+    api_response = api_instance.apieditions_list(name=name, search=search, ordering=ordering)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApimoduleApi->apimodule_list: %s\n" % e)
+    print("Exception when calling ApieditionsApi->apieditions_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Module]**](Module.md)
+[**list[Edition]**](Edition.md)
 
 ### Authorization
 
@@ -174,8 +174,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apimodule_partial_update**
-> Module apimodule_partial_update(id, data)
+# **apieditions_partial_update**
+> Edition apieditions_partial_update(id, data)
 
 
 
@@ -196,27 +196,27 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApimoduleApi(progdbclient.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this module.
-data = progdbclient.Module() # Module | 
+api_instance = progdbclient.ApieditionsApi(progdbclient.ApiClient(configuration))
+id = 56 # int | A unique integer value identifying this edition.
+data = progdbclient.Edition() # Edition | 
 
 try:
-    api_response = api_instance.apimodule_partial_update(id, data)
+    api_response = api_instance.apieditions_partial_update(id, data)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApimoduleApi->apimodule_partial_update: %s\n" % e)
+    print("Exception when calling ApieditionsApi->apieditions_partial_update: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this module. | 
- **data** | [**Module**](Module.md)|  | 
+ **id** | **int**| A unique integer value identifying this edition. | 
+ **data** | [**Edition**](Edition.md)|  | 
 
 ### Return type
 
-[**Module**](Module.md)
+[**Edition**](Edition.md)
 
 ### Authorization
 
@@ -229,8 +229,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apimodule_read**
-> Module apimodule_read(id)
+# **apieditions_read**
+> Edition apieditions_read(id)
 
 
 
@@ -251,25 +251,25 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApimoduleApi(progdbclient.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this module.
+api_instance = progdbclient.ApieditionsApi(progdbclient.ApiClient(configuration))
+id = 56 # int | A unique integer value identifying this edition.
 
 try:
-    api_response = api_instance.apimodule_read(id)
+    api_response = api_instance.apieditions_read(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApimoduleApi->apimodule_read: %s\n" % e)
+    print("Exception when calling ApieditionsApi->apieditions_read: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this module. | 
+ **id** | **int**| A unique integer value identifying this edition. | 
 
 ### Return type
 
-[**Module**](Module.md)
+[**Edition**](Edition.md)
 
 ### Authorization
 
@@ -282,8 +282,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apimodule_update**
-> Module apimodule_update(id, data)
+# **apieditions_update**
+> Edition apieditions_update(id, data)
 
 
 
@@ -304,27 +304,27 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = progdbclient.ApimoduleApi(progdbclient.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this module.
-data = progdbclient.Module() # Module | 
+api_instance = progdbclient.ApieditionsApi(progdbclient.ApiClient(configuration))
+id = 56 # int | A unique integer value identifying this edition.
+data = progdbclient.Edition() # Edition | 
 
 try:
-    api_response = api_instance.apimodule_update(id, data)
+    api_response = api_instance.apieditions_update(id, data)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApimoduleApi->apimodule_update: %s\n" % e)
+    print("Exception when calling ApieditionsApi->apieditions_update: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this module. | 
- **data** | [**Module**](Module.md)|  | 
+ **id** | **int**| A unique integer value identifying this edition. | 
+ **data** | [**Edition**](Edition.md)|  | 
 
 ### Return type
 
-[**Module**](Module.md)
+[**Edition**](Edition.md)
 
 ### Authorization
 
