@@ -207,7 +207,7 @@ def main():
         else:
             eprint("Not implemented for action: {}".format(args.action))
             exit(1)
-    if args.group == "package-tags":
+    elif args.group == "package-tags":
         allowed_keys = list(progdbclient.PackageTag.attribute_map.keys())
         while "id" in allowed_keys:
             allowed_keys.remove("id")
