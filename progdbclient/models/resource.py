@@ -39,7 +39,9 @@ class Resource(object):
         'machine_description': 'str',
         'scheme': 'str',
         'host': 'str',
-        'path': 'str',
+        'full_path': 'str',
+        'dirname': 'str',
+        'basename': 'str',
         'supercollection': 'str',
         'collection': 'str',
         'subcollection': 'str',
@@ -55,7 +57,9 @@ class Resource(object):
         'machine_description': 'machine_description',
         'scheme': 'scheme',
         'host': 'host',
-        'path': 'path',
+        'full_path': 'full_path',
+        'dirname': 'dirname',
+        'basename': 'basename',
         'supercollection': 'supercollection',
         'collection': 'collection',
         'subcollection': 'subcollection',
@@ -64,7 +68,7 @@ class Resource(object):
         'edition': 'edition'
     }
 
-    def __init__(self, id=None, text=None, human_description=None, machine_description=None, scheme=None, host=None, path=None, supercollection=None, collection=None, subcollection=None, is_installation=None, is_source=None, edition=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, text=None, human_description=None, machine_description=None, scheme=None, host=None, full_path=None, dirname=None, basename=None, supercollection=None, collection=None, subcollection=None, is_installation=None, is_source=None, edition=None, _configuration=None):  # noqa: E501
         """Resource - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -76,7 +80,9 @@ class Resource(object):
         self._machine_description = None
         self._scheme = None
         self._host = None
-        self._path = None
+        self._full_path = None
+        self._dirname = None
+        self._basename = None
         self._supercollection = None
         self._collection = None
         self._subcollection = None
@@ -96,8 +102,12 @@ class Resource(object):
             self.scheme = scheme
         if host is not None:
             self.host = host
-        if path is not None:
-            self.path = path
+        if full_path is not None:
+            self.full_path = full_path
+        if dirname is not None:
+            self.dirname = dirname
+        if basename is not None:
+            self.basename = basename
         if supercollection is not None:
             self.supercollection = supercollection
         if collection is not None:
@@ -243,25 +253,67 @@ class Resource(object):
         self._host = host
 
     @property
-    def path(self):
-        """Gets the path of this Resource.  # noqa: E501
+    def full_path(self):
+        """Gets the full_path of this Resource.  # noqa: E501
 
 
-        :return: The path of this Resource.  # noqa: E501
+        :return: The full_path of this Resource.  # noqa: E501
         :rtype: str
         """
-        return self._path
+        return self._full_path
 
-    @path.setter
-    def path(self, path):
-        """Sets the path of this Resource.
+    @full_path.setter
+    def full_path(self, full_path):
+        """Sets the full_path of this Resource.
 
 
-        :param path: The path of this Resource.  # noqa: E501
+        :param full_path: The full_path of this Resource.  # noqa: E501
         :type: str
         """
 
-        self._path = path
+        self._full_path = full_path
+
+    @property
+    def dirname(self):
+        """Gets the dirname of this Resource.  # noqa: E501
+
+
+        :return: The dirname of this Resource.  # noqa: E501
+        :rtype: str
+        """
+        return self._dirname
+
+    @dirname.setter
+    def dirname(self, dirname):
+        """Sets the dirname of this Resource.
+
+
+        :param dirname: The dirname of this Resource.  # noqa: E501
+        :type: str
+        """
+
+        self._dirname = dirname
+
+    @property
+    def basename(self):
+        """Gets the basename of this Resource.  # noqa: E501
+
+
+        :return: The basename of this Resource.  # noqa: E501
+        :rtype: str
+        """
+        return self._basename
+
+    @basename.setter
+    def basename(self, basename):
+        """Sets the basename of this Resource.
+
+
+        :param basename: The basename of this Resource.  # noqa: E501
+        :type: str
+        """
+
+        self._basename = basename
 
     @property
     def supercollection(self):

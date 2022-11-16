@@ -59,6 +59,13 @@ class PDBCHelper:
         configuration.api_key_prefix["Authorization"] = "Token"
         return progdbclient.ApipackagesApi(progdbclient.ApiClient(configuration))
 
+    def get_packagetags_api_instance(self):
+        configuration = progdbclient.Configuration()
+        configuration.host = self.get_current_conf_url()
+        configuration.api_key["Authorization"] = self.get_current_conf_value("token")
+        configuration.api_key_prefix["Authorization"] = "Token"
+        return progdbclient.ApipackagetagsApi(progdbclient.ApiClient(configuration))
+
     def get_editions_api_instance(self):
         configuration = progdbclient.Configuration()
         configuration.host = self.get_current_conf_url()

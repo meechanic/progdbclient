@@ -88,6 +88,12 @@ Class | Method | HTTP request | Description
 *ApipackagesApi* | [**apipackages_partial_update**](docs/ApipackagesApi.md#apipackages_partial_update) | **PATCH** /apipackages/{id}/ | 
 *ApipackagesApi* | [**apipackages_read**](docs/ApipackagesApi.md#apipackages_read) | **GET** /apipackages/{id}/ | 
 *ApipackagesApi* | [**apipackages_update**](docs/ApipackagesApi.md#apipackages_update) | **PUT** /apipackages/{id}/ | 
+*ApipackagetagsApi* | [**apipackagetags_create**](docs/ApipackagetagsApi.md#apipackagetags_create) | **POST** /apipackagetags/ | 
+*ApipackagetagsApi* | [**apipackagetags_delete**](docs/ApipackagetagsApi.md#apipackagetags_delete) | **DELETE** /apipackagetags/{id}/ | 
+*ApipackagetagsApi* | [**apipackagetags_list**](docs/ApipackagetagsApi.md#apipackagetags_list) | **GET** /apipackagetags/ | 
+*ApipackagetagsApi* | [**apipackagetags_partial_update**](docs/ApipackagetagsApi.md#apipackagetags_partial_update) | **PATCH** /apipackagetags/{id}/ | 
+*ApipackagetagsApi* | [**apipackagetags_read**](docs/ApipackagetagsApi.md#apipackagetags_read) | **GET** /apipackagetags/{id}/ | 
+*ApipackagetagsApi* | [**apipackagetags_update**](docs/ApipackagetagsApi.md#apipackagetags_update) | **PUT** /apipackagetags/{id}/ | 
 *ApiresourcesApi* | [**apiresources_create**](docs/ApiresourcesApi.md#apiresources_create) | **POST** /apiresources/ | 
 *ApiresourcesApi* | [**apiresources_delete**](docs/ApiresourcesApi.md#apiresources_delete) | **DELETE** /apiresources/{id}/ | 
 *ApiresourcesApi* | [**apiresources_list**](docs/ApiresourcesApi.md#apiresources_list) | **GET** /apiresources/ | 
@@ -101,6 +107,7 @@ Class | Method | HTTP request | Description
  - [AuthToken](docs/AuthToken.md)
  - [Edition](docs/Edition.md)
  - [Package](docs/Package.md)
+ - [PackageTag](docs/PackageTag.md)
  - [Resource](docs/Resource.md)
 
 

@@ -32,6 +32,12 @@ available item-level cmds for bulk actions:
     subparser_packages.add_argument("--id", type=str, help="Entity ID")
     subparser_packages.add_argument("--input-file", type=str, help="Input file")
     subparser_packages.add_argument("--default-cmd", type=str, help="Default cmd for bulk actions")
+    subparser_packagetags = subparsers.add_parser("packagetags", help="Utilities for work with PackageTags", formatter_class=argparse.RawDescriptionHelpFormatter, epilog=epilog)
+    subparser_packagetags.add_argument("--action", type=str, help="Possible actions: list | create | get | update | delete | bulk-dump | bulk-upload")
+    subparser_packagetags.add_argument("--profile", type=str, help="Config profile")
+    subparser_packagetags.add_argument("--id", type=str, help="Entity ID")
+    subparser_packagetags.add_argument("--input-file", type=str, help="Input file")
+    subparser_packagetags.add_argument("--default-cmd", type=str, help="Default cmd for bulk actions")
     subparser_replicas = subparsers.add_parser("editions", help="Utilities for work with Replicas", formatter_class=argparse.RawDescriptionHelpFormatter, epilog=epilog)
     subparser_replicas.add_argument("--action", type=str, help="Possible actions: list | create | get | update | delete | bulk-dump | bulk-upload")
     subparser_replicas.add_argument("--profile", type=str, help="Config profile")
@@ -195,6 +201,155 @@ def main():
                     id = i.pop("id")
                     try:
                         api_instance.apipackages_delete(id)
+                    except ApiException as e:
+                        eprint_exception(e, print_traceback=print_traceback)
+                position = position + 1
+        else:
+            eprint("Not implemented for action: {}".format(args.action))
+            exit(1)
+    if args.group == "package-tags":
+        allowed_keys = list(progdbclient.PackageTag.attribute_map.keys())
+        while "id" in allowed_keys:
+            allowed_keys.remove("id")
+        if args.action == "list" or args.action == None:
+            try:
+                api_instance = pdbch.get_packagetags_api_instance()
+                res = api_instance.apipackagetags_list()
+                if res:
+                    obj = [i.to_dict() for i in res]
+            except ApiException as e:
+                eprint_exception(e, print_traceback=print_traceback)
+        elif args.action == "get":
+            try:
+                id = int(args.id)
+            except TypeError as e:
+                eprint("Incorrect or missing ID")
+                exit(1)
+            try:
+                api_instance = pdbch.get_packagetags_api_instance()
+                obj = api_instance.apipackagetags_read(id).to_dict()
+            except ApiException as e:
+                eprint_exception(e, print_traceback=print_traceback)
+        elif args.action == "create":
+            if not args.input_file:
+                eprint("Missing input file")
+                exit(1)
+            try:
+                with open(args.input_file, "r") as f:
+                    res_pre = yaml.safe_load(f)
+            except (OSError, yaml.YAMLError) as e:
+                eprint_exception(e, print_traceback=print_traceback)
+                exit(1)
+            res = {correct_key: res_pre[correct_key] for correct_key in allowed_keys}
+            data = progdbclient.PackageTag(**res)
+            try:
+                api_instance = pdbch.get_packagetags_api_instance()
+                obj = api_instance.apipackagetags_create(data).to_dict()
+            except ApiException as e:
+                eprint_exception(e, print_traceback=print_traceback)
+        elif args.action == "update":
+            if not args.input_file:
+                eprint("Missing input file")
+                exit(1)
+            try:
+                id = int(args.id)
+            except TypeError as e:
+                eprint("Incorrect or missing ID")
+                exit(1)
+            try:
+                with open(args.input_file, "r") as f:
+                    res_pre = yaml.safe_load(f)
+            except (OSError, yaml.YAMLError) as e:
+                eprint_exception(e, print_traceback=print_traceback)
+                exit(1)
+            res = {correct_key: res_pre[correct_key] for correct_key in allowed_keys}
+            data = progdbclient.PackageTag(**res)
+            try:
+                api_instance = pdbch.get_packagetags_api_instance()
+                obj = api_instance.apipackagetags_update(id, data).to_dict()
+            except ApiException as e:
+                eprint_exception(e, print_traceback=print_traceback)
+        elif args.action == "delete":
+            try:
+                id = int(args.id)
+            except TypeError as e:
+                eprint("Incorrect or missing ID")
+                exit(1)
+            try:
+                api_instance = pdbch.get_packagetags_api_instance()
+                api_instance.apipackagetags_delete(id)
+            except ApiException as e:
+                eprint_exception(e, print_traceback=print_traceback)
+        elif args.action == "bulk-dump":
+            default_cmd = ""
+            if args.default_cmd not in possible_cmds + [None]:
+                eprint("Unknown default cmd: {}, use one of the following {}".format(args.default_cmd, ", ".join(possible_cmds)))
+                exit(1)
+            if args.default_cmd is not None:
+                default_cmd = args.default_cmd
+            try:
+                api_instance = pdbch.get_packagetags_api_instance()
+                res = api_instance.apipackagetags_list()
+                if res:
+                    obj = []
+                    for i in res:
+                        new_item = i.to_dict()
+                        new_item.update({"cmd": default_cmd})
+                        obj.append(new_item)
+            except ApiException as e:
+                eprint_exception(e, print_traceback=print_traceback)
+        elif args.action == "bulk-upload":
+            if not args.input_file:
+                eprint("Missing input file")
+                exit(1)
+            default_cmd = ""
+            if args.default_cmd not in possible_cmds + [None]:
+                eprint("Unknown default cmd: {}, use one of the following {}".format(args.default_cmd, ", ".join(possible_cmds)))
+                exit(1)
+            if args.default_cmd is not None:
+                default_cmd = args.default_cmd
+            try:
+                with open(args.input_file, "r") as f:
+                    input_data = yaml.safe_load(f)
+            except (OSError, yaml.YAMLError) as e:
+                eprint_exception(e, print_traceback=print_traceback)
+                exit(1)
+            try:
+                api_instance = pdbch.get_packagetags_api_instance()
+            except ApiException as e:
+                eprint_exception(e, print_traceback=print_traceback)
+            position = 1
+            for i in input_data:
+                if not isinstance(i, dict) or not "cmd" in i.keys() or not "id" in i.keys():
+                    eprint("At position number {}: Input data element has unappropriated format".format(position))
+                    continue
+                if i["cmd"] not in possible_cmds + [""]:
+                    eprint("At position number {}: Input data element contains an unknown command: {}".format(position, i["cmd"]))
+                    continue
+                cmd = i.pop("cmd")
+                if cmd == "":
+                    cmd = default_cmd
+                if cmd == "c":
+                    i_final = {correct_key: i[correct_key] for correct_key in allowed_keys}
+                    data = progdbclient.PackageTag(**i_final)
+                    try:
+                        api_instance.apipackagetags_create(data)
+                    except ApiException as e:
+                        eprint("At position number {}:".format(position))
+                        eprint_exception(e, print_traceback=print_traceback)
+                if cmd == "u":
+                    id = i.pop("id")
+                    i_final = {correct_key: i[correct_key] for correct_key in allowed_keys}
+                    data = progdbclient.PackageTag(**i_final)
+                    try:
+                        api_instance.apipackagetags_update(id, data)
+                    except ApiException as e:
+                        eprint("At position number {}:".format(position))
+                        eprint_exception(e, print_traceback=print_traceback)
+                if cmd == "d":
+                    id = i.pop("id")
+                    try:
+                        api_instance.apipackagetags_delete(id)
                     except ApiException as e:
                         eprint_exception(e, print_traceback=print_traceback)
                 position = position + 1

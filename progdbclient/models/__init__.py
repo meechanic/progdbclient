@@ -18,4 +18,5 @@ from __future__ import absolute_import
 from progdbclient.models.auth_token import AuthToken
 from progdbclient.models.edition import Edition
 from progdbclient.models.package import Package
+from progdbclient.models.package_tag import PackageTag
 from progdbclient.models.resource import Resource
